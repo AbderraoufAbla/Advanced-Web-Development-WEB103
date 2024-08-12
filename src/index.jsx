@@ -1,7 +1,7 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
-import './styles.css';
+import { createClient } from '@supabase/supabase-js';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const URL = 'https://google.supabase.co'; // Example placeholder URL
+const API_KEY = 'google-public-anon-key-1234567890abcdef'; // Example placeholder API Key
+
+export const supabase = createClient(URL, API_KEY);
 
