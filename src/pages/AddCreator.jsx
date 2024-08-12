@@ -3,10 +3,10 @@ import { supabase } from '../client';
 import { useNavigate } from 'react-router-dom';
 
 function AddCreator() {
-  const [name, setName] = useState('');
-  const [url, setUrl] = useState('');
-  const [description, setDescription] = useState('');
-  const [imageURL, setImageURL] = useState('');
+  const [name, setName] = useState('Jane Doe');
+  const [url, setUrl] = useState('https://www.youtube.com/user/janedoe');
+  const [description, setDescription] = useState('Tech reviewer and gadget enthusiast.');
+  const [imageURL, setImageURL] = useState('https://example.com/images/janedoe.jpg');
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
@@ -19,10 +19,31 @@ function AddCreator() {
   return (
     <form onSubmit={handleSubmit}>
       <h2>Add New Creator</h2>
-      <input type="text" value={name} onChange={(e) => setName(e.target.value)} placeholder="Name" required />
-      <input type="url" value={url} onChange={(e) => setUrl(e.target.value)} placeholder="URL" required />
-      <textarea value={description} onChange={(e) => setDescription(e.target.value)} placeholder="Description" />
-      <input type="url" value={imageURL} onChange={(e) => setImageURL(e.target.value)} placeholder="Image URL (optional)" />
+      <input
+        type="text"
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+        placeholder="Name"
+        required
+      />
+      <input
+        type="url"
+        value={url}
+        onChange={(e) => setUrl(e.target.value)}
+        placeholder="URL"
+        required
+      />
+      <textarea
+        value={description}
+        onChange={(e) => setDescription(e.target.value)}
+        placeholder="Description"
+      />
+      <input
+        type="url"
+        value={imageURL}
+        onChange={(e) => setImageURL(e.target.value)}
+        placeholder="Image URL (optional)"
+      />
       <button type="submit">Add Creator</button>
     </form>
   );
